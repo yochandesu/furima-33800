@@ -1,6 +1,6 @@
 <mxfile>
     <diagram id="8njHuv3gDyXsJ4vl-iNV" name="ページ1">
-        <mxGraphModel dx="362" dy="598" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="930" dy="598" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -67,7 +67,7 @@
                 <mxCell id="20" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" parent="19" vertex="1">
                     <mxGeometry width="30" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="商品名 item_name&#10;商品説明 description&#10;値段 price&#10;出品者  exhibitor&#10;カテゴリ category&#10;商品の状態 status&#10;配送料の負担 delibery&#10;発送元の地域 area&#10;発送日の目安guideline" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="19" vertex="1">
+                <mxCell id="21" value="商品名 item_name&#10;商品説明 description&#10;値段 price&#10;出品者  exhibitor&#10;カテゴリ category_id&#10;商品の状態 status_id&#10;配送料の負担 delibery_id&#10;発送元の地域 area_id&#10;発送日の目安guideline_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="19" vertex="1">
                     <mxGeometry x="30" width="200" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="25" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="15" vertex="1">
