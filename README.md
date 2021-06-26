@@ -23,10 +23,10 @@ has_many :records
 |price    |integer   |null: false|
 |user     |references|users_id, foreign_key: true|
 |category_id|integer |null: false|
-|status   |string    |null: false|
-|delibery |string    |null: false|
-|area     |string    |null: false|
-|guideline|string    |null: false|
+|status_id   |integer   |null: false|
+|delibery_id |integer   |null: false|
+|area_id     |integer   |null: false|
+|guideline_id|integer   |null: false|
 
 ### Association
 has_one :record
@@ -34,26 +34,27 @@ belongs_to :user
 
 
 ## records
-|Column  |Type      |Options                    |
-|--------|----------|---------------------------|
-|buy_item|references|items_id, foreign_key: true|
-|buy_person|references|users_id, foreign_key: true|
+|Column  |Type      |Options                       |
+|--------|----------|------------------------------|
+|item_id |references|null: false, foreign_key: true|
+|user_id |references|null: false, foreign_key: true|
 
 ### Association
 belongs_to :item
 belongs_to :user
+has_one :send
 
 
 ## sends
 |Column      |Type   |Options    |
 |------------|-------|-----------|
 |postal_code |string |null: false|
-|prefectures |string |null: false|
+|prefectures |integer|null: false|
 |municipality|string |null: false|
 |address     |string |null: false|
 |building    |string |           |
 |phone       |string |null: false|
-
+|record_id   |references|null: false, foreign_key: true|
 
 ### Association
 belongs_to :record
