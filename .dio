@@ -1,6 +1,6 @@
 <mxfile>
     <diagram id="8njHuv3gDyXsJ4vl-iNV" name="ページ1">
-        <mxGraphModel dx="912" dy="598" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="362" dy="598" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -114,7 +114,7 @@
                 <mxCell id="33" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" parent="32" vertex="1">
                     <mxGeometry width="50" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="34" value="購入した商品 buy_item&#10;購入した人 but_person" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="32" vertex="1">
+                <mxCell id="34" value="購入した商品 item_id&#10;購入した人 user_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="32" vertex="1">
                     <mxGeometry x="50" width="210" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="35" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="28" vertex="1">
@@ -192,7 +192,7 @@
                 <mxCell id="60" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" parent="59" vertex="1">
                     <mxGeometry width="30" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="61" value="郵便番号 postal_code&#10;都道府県 prefectures&#10;市区町村 municipality&#10;番地 address&#10;建物名 building&#10;電話番号 phone" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="59" vertex="1">
+                <mxCell id="61" value="郵便番号 postal_code&#10;都道府県 prefectures&#10;市区町村 municipality&#10;番地 address&#10;建物名 building&#10;電話番号 phone&#10;record_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="59" vertex="1">
                     <mxGeometry x="30" width="210" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="62" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="55" vertex="1">
