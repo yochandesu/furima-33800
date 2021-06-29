@@ -6,9 +6,9 @@ RSpec.describe User, type: :model do
 
   describe "ユーザー新規登録" do
    context '新規登録ができる時' do
-    # it 'nickname,email,encrypted_password,password_confirmation,familyname,firstname,family_kana,first_kana,birthdayが存在すれば登録できる'
-    #   expect(@user).to be_valid
-    # end
+    it 'nickname,email,encrypted_password,password_confirmation,familyname,firstname,family_kana,first_kana,birthdayが存在すれば登録できる' do
+      expect(@user).to be_valid
+    end
    end
    context '新規登録ができない時' do
     it "nicknameが空では登録できない" do
@@ -21,6 +21,28 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include "Email can't be blank"
     end
+    it "emailが重複していると登録出来ない" do
+      @user.save
+      another_user = FactoryBot.build(:user)
+      another_user.email = @user.email
+      another_user.valid?
+      expect(another_user.errors.full_messages).to include('Email has already been taken')
+    end
+    it "emailに@が含まれていないと登録できない" do
+      @user.email = 'ddddd'
+      @user.valid?
+      expect(@user.errors.full_messages).to include "Email is invalid"
+    end
+    it 'passwordは数字のみでは登録できない' do
+       @user.password = '11111'
+       @user.valid?
+       expect(@user.errors.full_messages).to include("Password is invalid")
+    end
+    it 'passwordは全角のみだと登録できない' do
+       @user.password = 'ああああ'
+       @user.valid?
+       expect(@user.errors.full_messages).to include("Password is invalid")
+    end  
     it 'passwordが空では登録できない' do
       @user.password = ''
       @user.valid?
@@ -67,10 +89,20 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include "Family kana can't be blank"
     end
+    it "family_kanaはカタカナでないと登録できない" do
+      @user.family_kana = 'あ'
+        @user.valid?
+        expect(@user.errors.full_messages).to include "Family kana is invalid"
+    end
     it "first_kanaが空では登録できない" do
         @user.first_kana = ''
         @user.valid?
         expect(@user.errors.full_messages).to include "First kana can't be blank"
+    end
+    it "first_kanaがカタカナでないと登録できない" do
+        @user.first_kana = 'あ'
+        @user.valid?
+        expect(@user.errors.full_messages).to include "First kana is invalid"
     end
     it "birthdayが空では登録できない" do
         @user.birthday = ''

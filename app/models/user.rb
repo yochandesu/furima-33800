@@ -2,8 +2,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :nickname, presence: true
-  validates :email, presence: true
+  with_options presence: true do
+  validates :nickname
+  validates :birthday
+  end
+  # validates :email, presence: true
   
   with_options presence: true, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i} do
   validates :password
@@ -14,9 +17,12 @@ class User < ApplicationRecord
   validates :firstname
   end
 
-  validates :family_kana, presence: true
-  validates :first_kana, presence: true
-  validates :birthday, presence: true
+  with_options presence: true, format: { with: /\A[ァ-ヶ]+\z/} do
+  validates :family_kana
+  validates :first_kana
+  end
+
+  
   
   # バリデーションのオプション追記
   # アソシエーションを記述
