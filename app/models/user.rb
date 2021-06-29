@@ -26,6 +26,5 @@ class User < ApplicationRecord
   
   # バリデーションのオプション追記
   # アソシエーションを記述
-
-
+ 
 end
