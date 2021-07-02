@@ -22,9 +22,7 @@ class User < ApplicationRecord
   validates :first_kana
   end
 
-  
-  
-  # バリデーションのオプション追記
-  # アソシエーションを記述
+  has_many :items
+  has_many :records
  
 end
