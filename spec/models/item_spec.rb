@@ -91,8 +91,18 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include "Price is too long (maximum is 7 characters)"
     end
-    it '販売価格は半角数字のみ出ないと登録できない' do
+    it '販売価格は全角数字だと登録できない' do
+      @item.price = '１１１'
+      @item.valid?
+      expect(@item.errors.full_messages).to include "Price is too short (minimum is 3 characters)"
+    end
+    it '販売価格は半角英字だと登録できない' do
       @item.price = 'aaa'
+      @item.valid?
+      expect(@item.errors.full_messages).to include "Price is too short (minimum is 3 characters)"
+    end
+    it '販売価格は半角英数字混合だと登録できない' do
+      @item.price = 'aaa111'
       @item.valid?
       expect(@item.errors.full_messages).to include "Price is too short (minimum is 3 characters)"
     end
