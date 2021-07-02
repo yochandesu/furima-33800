@@ -6,7 +6,7 @@ belongs_to :delibery
 belongs_to :area
 belongs_to :guideline
 
-has_one :record
+# has_one :record
 belongs_to :user
 has_one_attached :image
 
