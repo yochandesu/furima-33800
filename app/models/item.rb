@@ -26,9 +26,11 @@ with_options presence: true do
  validates :price
 end
 
-validates :category_id, numericality: { other_than: 1 }
-validates :status_id, numericality: { other_than: 1 }
-validates :delibery_id, numericality: { other_than: 1 }
-validates :area_id, numericality: { other_than: 1 }
-validates :guideline_id, numericality: { other_than: 1 }
+ with_options numericality: { other_than: 1 }  do
+validates :category_id
+validates :status_id
+validates :delibery_id
+validates :area_id
+validates :guideline_id
+ end
 end
