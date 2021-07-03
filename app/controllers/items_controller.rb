@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new,:create, :edit, :update]
+  before_action :setitem, only: [:show, :edit,:update]
+  before_action :move_to_index, only: [:edit,:update]
 
 def index
-  # @items = Item.order("created_at DESC")
   @items = Item.all.order("created_at DESC")
 end
 
@@ -22,8 +23,25 @@ end
 # chatappを参考に
 
 def show
-  @item = Item.find(params[:id])
+  # @item = Item.find(params[:id])
+  
 end
+
+
+def edit
+  # @item = Item.find(params[:id])
+end
+
+def update
+  # item = Item.find(params[:id])
+  if @item.update(item_params)
+    redirect_to root_path
+  else
+    render :edit
+  end
+
+end
+
 
 
 private
@@ -31,6 +49,14 @@ private
   def item_params
     params.require(:item).permit(:content, :image, :item_name, :description, :price, :user, :category_id, :status_id, :delibery_id, :area_id, :guideline_id).merge(user_id: current_user.id)
   end
-# pictweetのコントローラーを参考にする
 
+  def setitem
+    @item = Item.find(params[:id])
+  end
+  
+  def move_to_index
+  if @item.user != current_user
+   redirect_to root_path
+  end
+end
 end
