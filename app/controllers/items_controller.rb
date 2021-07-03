@@ -6,7 +6,6 @@ def index
   @items = Item.all.order("created_at DESC")
 end
 
-
 def new
  @item = Item.new
   
@@ -21,6 +20,11 @@ def create
   end
 end
 # chatappを参考に
+
+def show
+  @item = Item.find(params[:id])
+end
+
 
 private
 
