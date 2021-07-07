@@ -1,10 +1,6 @@
 class RecordSend
   include ActiveModel::Model
   attr_accessor :item_id, :user_id, :postal_code, :area_id, :municipality, :address, :building, :phone, :token
-
-  validates :token, presence: true
-  
-  
   
   # send.rbのバリデーション
   with_options presence: true do
@@ -16,6 +12,8 @@ class RecordSend
    # record.rbのバリデーション
    validates :item_id
    validates :user_id
+   
+   validates :token
   end
 
   def save
