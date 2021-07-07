@@ -32,7 +32,7 @@ has_many :records
 has_one :record
 belongs_to :user
 
-
+<!-- 購入記録 -->
 ## records
 |Column  |Type      |Options          |
 |--------|----------|-----------------|
@@ -44,8 +44,8 @@ belongs_to :item
 belongs_to :user
 has_one :send
 
-
-## sends
+<!-- 発送先 -->
+## sends>haisou
 |Column      |Type   |Options    |
 |-------------|-------|-----------|
 |postal_code  |string |null: false|
