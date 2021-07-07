@@ -29,8 +29,7 @@ def setitem
 end
 
  def move_to_index
-  if @item.user == current_user 
-    if @item.record == nil
+  if @item.user == current_user || @item.record != nil
   redirect_to root_path
   end
  end
