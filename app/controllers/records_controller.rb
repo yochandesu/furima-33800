@@ -43,4 +43,3 @@ end
         currency: 'jpy'
       )
  end
-end

@@ -31,6 +31,11 @@ RSpec.describe RecordSend, type: :model do
         @record_send.valid?
         expect(@record_send.errors.full_messages).to include("Postal code can't be blank")
       end
+      it '郵便番号に半角の「-」がないと登録できない' do
+        @record_send.postal_code = '1111111'
+        @record_send.valid?
+        expect(@record_send.errors.full_messages).to include("Postal code is invalid")
+      end
       it '都道府県が空では登録できない' do
         @record_send.area_id = ''
         @record_send.valid?
