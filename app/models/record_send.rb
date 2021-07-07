@@ -4,9 +4,7 @@ class RecordSend
 
   validates :token, presence: true
   
-  # record.rbのバリデーション
-  validates :item_id, presence: true
-  validates :user_id, presence: true
+  
   
   # send.rbのバリデーション
   with_options presence: true do
@@ -15,9 +13,10 @@ class RecordSend
    validates :municipality
    validates :address
    validates :phone,       format: { with: /\A\d{10,11}\z/ }
+   # record.rbのバリデーション
+   validates :item_id
+   validates :user_id
   end
-  
-  # validates :building
 
   def save
     # 購入情報を保存し、変数recordに代入する

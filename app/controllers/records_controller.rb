@@ -8,10 +8,6 @@ class RecordsController < ApplicationController
     @record_send = RecordSend.new
   end
 
-  # def new
-  #   @record_send = RecordSend.new
-  # end
-
   def create
 
     @item = Item.find(params[:item_id])
