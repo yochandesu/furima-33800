@@ -1,19 +1,16 @@
 class RecordsController < ApplicationController
   before_action :authenticate_user!, only: :index
-  before_action :setitem, only: :index
+  before_action :setitem, only: [:index, :create]
   before_action :move_to_index, only: :index
   
   def index
-    @item = Item.find(params[:item_id])
     @record_send = RecordSend.new
   end
 
   def create
-
-    @item = Item.find(params[:item_id])
     @record_send = RecordSend.new(record_params)
     if @record_send.valid?
-      Payjp.api_key = "sk_test_b124eefb62fb443244fc9471"  
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]  
       Payjp::Charge.create(
         amount: @item[:price],
         card: record_params[:token],
