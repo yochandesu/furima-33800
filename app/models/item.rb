@@ -23,7 +23,7 @@ with_options presence: true do
   end
 
  with_options presence: true, format: { with: /\A[0-9]+\z/}, length: { in: 3..7 }  do
- validates :price
+ validates_inclusion_of :price, in: 300..9999999
 end
 
  with_options numericality: { other_than: 1 }  do
